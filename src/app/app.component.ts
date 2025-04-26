@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./core/components/header/header.component";
+import { HeaderComponent } from './core/components/header/header.component'; 
+import { SentimentComponent } from './features/sentiment/sentiment/sentiment.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, HeaderComponent],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [HeaderComponent, SentimentComponent] // Aquí lo IMPORTAS
 })
 export class AppComponent {
-  title = 'SentimentScopeFrontend';
+  title = 'SentimentScopeFrontend'; 
 }
