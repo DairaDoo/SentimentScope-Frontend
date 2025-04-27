@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SentimentService } from '../../../core/services/sentiment.service';
 
 @Component({
   selector: 'app-sentiment',
@@ -17,17 +18,19 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-  ],
+  ], 
   templateUrl: './sentiment.component.html',
   styleUrls: ['./sentiment.component.css']
 })
+
+
 export class SentimentComponent {
   comment: string = '';
   result: string = '';
   loading: boolean = false;
   error: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private sentimentService: SentimentService) {}
 
   analyzeSentiment() {
     if (!this.comment.trim()) {
@@ -40,11 +43,9 @@ export class SentimentComponent {
     this.error = '';
     this.result = '';
 
-    this.http.post<{ Sentiment: string }>('http://localhost:5268/api/Sentiment/analyze', {
-      comment: this.comment
-    }).subscribe({
+    this.sentimentService.analyzeSentiment(this.comment).subscribe({
       next: (response) => {
-        this.result = `El sentimiento es: ${response.Sentiment}`;
+        this.result = `El sentimiento es: ${response.sentiment}`; // Notar que es .sentiment (minúscula)
         this.loading = false;
       },
       error: (err) => {
