@@ -17,7 +17,7 @@
       <mat-spinner diameter="40" color="accent"></mat-spinner>
     </div>
     
-    <div *ngIf="result" class="result">
+    <div *ngIf="result" class="result" [ngClass]="sentimentClass">
       {{ result }}
     </div>
     

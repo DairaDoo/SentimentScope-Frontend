@@ -29,6 +29,7 @@ export class SentimentComponent {
   result: string = '';
   loading: boolean = false;
   error: string = '';
+  sentimentClass: string = ''; // Added property
 
   constructor(private sentimentService: SentimentService) {}
 
@@ -42,10 +43,12 @@ export class SentimentComponent {
     this.loading = true;
     this.error = '';
     this.result = '';
+    this.sentimentClass = ''; // Reset class
 
     this.sentimentService.analyzeSentiment(this.comment).subscribe({
       next: (response) => {
-        this.result = `El sentimiento es: ${response.sentiment}`; // Notar que es .sentiment (minúscula)
+        this.result = `El sentimiento es: ${response.sentiment}`;
+        this.sentimentClass = response.sentiment === 'Positivo' ? 'positive' : 'negative'; // Set class
         this.loading = false;
       },
       error: (err) => {

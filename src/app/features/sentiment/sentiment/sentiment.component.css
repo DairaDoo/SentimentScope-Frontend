@@ -164,17 +164,33 @@
   animation: fadeIn 0.5s ease-out;
 }
 
-/* Estilos para el resultado según el sentimiento */
+/* Estilos para el resultado positivo */
 .result.positive {
+  background-color: #e8f5e9; /* Verde pastel */
   color: #2e7d32;
-  background-color: #e8f5e9;
   border-left: 4px solid #4caf50;
 }
 
+/* Estilos para el resultado negativo */
 .result.negative {
+  background-color: #ffebee; /* Rojo pastel */
   color: #c62828;
-  background-color: #ffebee;
   border-left: 4px solid #ef5350;
+}
+
+/* Estilos para el error */
+.error {
+  margin-top: 1.8rem;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--error);
+  background-color: rgba(244, 67, 54, 0.1);
+  border-left: 4px solid var(--error);
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease-out;
 }
 
 /* Animaciones */
