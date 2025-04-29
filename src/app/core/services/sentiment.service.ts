@@ -26,4 +26,3 @@ export class SentimentService {
     return this.http.post<SentimentResponse>(`${this.apiUrl}/analyze`, body);
   }
 }
-

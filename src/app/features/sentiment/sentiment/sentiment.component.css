@@ -31,7 +31,7 @@
 /* Estilos de la caja principal */
 .sentiment-box {
   background: rgb(255, 255, 255);
-  padding: 2.5rem;  
+  padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   width: 450px;
@@ -39,7 +39,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sentiment-box:hover {
@@ -195,8 +197,14 @@
 
 /* Animaciones */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive */
@@ -204,7 +212,7 @@
   .sentiment-box {
     padding: 1.8rem;
   }
-  
+
   .title {
     font-size: 1.7rem;
     margin-bottom: 1.5rem;

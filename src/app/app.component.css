@@ -1,6 +1,6 @@
 .main-content {
-    width: 100%;
-    min-height: calc(100vh - 84px);
-    box-sizing: border-box;
-    overflow-x: hidden;
+  width: 100%;
+  min-height: calc(100vh - 84px);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }

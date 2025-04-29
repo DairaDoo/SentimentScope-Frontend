@@ -6,6 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
   selector: 'app-header',
   imports: [MatToolbarModule, MatIconModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {}

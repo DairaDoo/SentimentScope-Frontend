@@ -5,11 +5,21 @@
 
     <mat-form-field appearance="fill" class="input-field">
       <mat-label>Escribe tu comentario</mat-label>
-      <textarea matInput [(ngModel)]="comment" rows="4" placeholder="¿Qué estás pensando?"></textarea>
+      <textarea
+        matInput
+        [(ngModel)]="comment"
+        rows="4"
+        placeholder="¿Qué estás pensando?"
+      ></textarea>
       <mat-hint>Comparte tus pensamientos para analizar</mat-hint>
     </mat-form-field>
 
-    <button mat-raised-button class="analyze-button" (click)="analyzeSentiment()" [disabled]="loading">
+    <button
+      mat-raised-button
+      class="analyze-button"
+      (click)="analyzeSentiment()"
+      [disabled]="loading"
+    >
       Analizar
     </button>
 

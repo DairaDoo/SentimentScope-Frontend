@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,18 +18,16 @@ import { SentimentService } from '../../../core/services/sentiment.service';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-  ], 
+  ],
   templateUrl: './sentiment.component.html',
-  styleUrls: ['./sentiment.component.css']
+  styleUrls: ['./sentiment.component.css'],
 })
-
-
 export class SentimentComponent {
-  comment: string = '';
-  result: string = '';
-  loading: boolean = false;
-  error: string = '';
-  sentimentClass: string = ''; // Added property
+  comment = '';
+  result = '';
+  loading = false;
+  error = '';
+  sentimentClass = ''; // Added property
 
   constructor(private sentimentService: SentimentService) {}
 
@@ -55,7 +53,7 @@ export class SentimentComponent {
         console.error(err);
         this.error = 'Error al analizar el comentario.';
         this.loading = false;
-      }
+      },
     });
   }
 }
