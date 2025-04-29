@@ -2,27 +2,33 @@
   <div class="sentiment-box">
     <div class="header-accent"></div>
     <h2 class="title">Analizador de Sentimientos</h2>
-    
+
     <mat-form-field appearance="fill" class="input-field">
       <mat-label>Escribe tu comentario</mat-label>
       <textarea matInput [(ngModel)]="comment" rows="4" placeholder="¿Qué estás pensando?"></textarea>
       <mat-hint>Comparte tus pensamientos para analizar</mat-hint>
     </mat-form-field>
-    
+
     <button mat-raised-button class="analyze-button" (click)="analyzeSentiment()" [disabled]="loading">
       Analizar
     </button>
-    
-    <div *ngIf="loading" class="loading">
-      <mat-spinner diameter="40" color="accent"></mat-spinner>
-    </div>
-    
-    <div *ngIf="result" class="result" [ngClass]="sentimentClass">
-      {{ result }}
-    </div>
-    
-    <div *ngIf="error" class="error">
-      {{ error }}
-    </div>
+
+    @if (loading) {
+      <div class="loading">
+        <mat-spinner diameter="40" color="accent"></mat-spinner>
+      </div>
+    }
+
+    @if (result) {
+      <div class="result" [ngClass]="sentimentClass">
+        {{ result }}
+      </div>
+    }
+
+    @if (error) {
+      <div class="error">
+        {{ error }}
+      </div>
+    }
   </div>
 </div>
