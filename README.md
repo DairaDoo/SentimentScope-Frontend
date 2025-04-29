@@ -2,13 +2,14 @@
 
 **SentimentScope** es una aplicación web para análisis de sentimientos que determina si un texto expresa emociones positivas o negativas. Combina un backend potente basado en ML.NET con una interfaz de usuario intuitiva desarrollada en Angular.
 
-<div style="text-align: center;">
-  <img
-    src="https://res.cloudinary.com/dcldzjq9s/image/upload/v1745687074/ckkit6yceralsvybnplk.png"
+<p align="center">
+  <img 
+    src="https://res.cloudinary.com/dcldzjq9s/image/upload/v1745687074/ckkit6yceralsvybnplk.png" 
     alt="SentimentScope Banner"
-    style="max-width: 100%; width: 300px; height: auto;"
+    width="300"
   />
-</div>
+</p>
+
 
 
 ## ✨ Características
